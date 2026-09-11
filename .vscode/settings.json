@@ -1,0 +1,13 @@
+{
+    "editor.formatOnSave": true,
+    "[tex]": {
+        "editor.defaultFormatter": "James-Yu.latex-workshop"
+    },
+    "latex-workshop.latexindent.enabled": true,
+    "latex-workshop.formatting.latex": "latexindent",
+    "latex-workshop.latexindent.path": "/Library/TeX/texbin/latexindent",
+    "latex-workshop.latexindent.configPath": "${workspaceFolder}/.latexindent.yaml",
+    "latex-workshop.latexindent.args": [
+        "-w"
+    ]
+}

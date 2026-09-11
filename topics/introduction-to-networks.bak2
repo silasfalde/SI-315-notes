@@ -12,7 +12,7 @@
 \section{Bridges and Local Bridges}
 \begin{itemize}
   \item Bridge: an edge whose removal disconnects the network into separate components
-    \item Local bridge: an edge whose endpoints do not have any direct ties to the same neighboring nodes
+  \item Local bridge: an edge whose endpoints do not have any direct ties to the same neighboring nodes
   \item Local bridge: removing it increases the distance between its endpoints, giving it a span of at least 3
   \item Span of a bridge: the distance between the endpoints after the edge is removed
   \item Bridges and local bridges: often connect otherwise distant or disconnected regions of the network
