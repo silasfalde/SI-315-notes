@@ -12,7 +12,7 @@
 \section{Bridges and Local Bridges}
 \begin{itemize}
   \item Bridge: an edge whose removal disconnects the network into separate components
-    \item Local bridge: an edge whose endpoints do not have any direct ties to the same neighboring nodes
+  \item Local bridge: an edge whose endpoints do not have any direct ties to the same neighboring nodes
   \item Local bridge: removing it increases the distance between its endpoints, giving it a span of at least 3
   \item Span of a bridge: the distance between the endpoints after the edge is removed
   \item Bridges and local bridges: often connect otherwise distant or disconnected regions of the network
@@ -34,4 +34,55 @@
   \item Open triad: two strong ties without a connecting edge
   \item Open triads: pressure toward closure
   \item Closed triads: higher clustering coefficients
+\end{itemize}
+
+\section{Homophily}
+\begin{itemize}
+  \item Homophily: the tendency for people to form ties with similar others
+  \item Similarity may involve age, gender, education, location, interests, or beliefs
+  \item Homophily can produce clustered groups with shared characteristics
+  \item Network ties can reinforce existing similarities through social influence
+  \item Observed similarity may result from selection, influence, or both
+  \item Let $p$ and $q$ be the proportions of two groups, with $p+q=1$
+  \item Under random mixing, the probability of a cross-group tie is $2pq$
+  \item Cross-group tie probability $c$ under random mixing: expected to be $2pq$
+  \item Homophily where the observed cross-group tie probability is less than expected: $c < 2pq$
+\end{itemize}
+
+\section{Affiliation Networks}
+\begin{itemize}
+  \item Affiliation network: a network connecting people to the groups, events, organizations, or activities they participate in
+  \item Two-mode network: contains two types of nodes, such as individuals and affiliations
+  \item One-mode projection: connects two people when they share an affiliation
+  \item Shared affiliations can create indirect social ties and opportunities for interaction
+  \item Affiliations can reveal overlapping communities and patterns of participation
+\end{itemize}
+
+\section{Social Affiliation Networks}
+\begin{itemize}
+  \item Social affiliation network: represents relationships between people and the groups, events, or organizations with which they are affiliated
+  \item Membership links connect each person to the affiliations they share
+  \item Shared affiliations can create indirect opportunities for social interaction and information flow
+  \item One-mode projection: connects people who share at least one affiliation
+  \item Projection ties may be weighted by the number of affiliations two people share
+  \item Affiliation networks can reveal overlapping communities, central participants, and patterns of group involvement
+\end{itemize}
+
+\subsection{Closure in Social Affiliation Networks}
+
+\begin{itemize}
+  \item Triadic: nodes with a common neighbor tend to form a direct connection, closing the triad
+  \item Group/focal: nodes connected to the same group or affiliation tend to form direct connections, closing the group-based triad
+  \item Membership: nodes are more likely to join groups that their neighbors are already members of
+\end{itemize}
+
+\section{Signed Networks}
+
+\begin{itemize}
+  \item Signed network: a network in which edges have positive or negative signs, representing friendly or antagonistic relationships
+  \item Positive tie: indicates friendship, trust, or alliance
+  \item Negative tie: indicates enmity, distrust, or conflict
+  \item Balance theory: suggests that triads tend to evolve toward a balanced state, where the product of the signs of the edges is positive
+  \item Balanced triads: all positive edges or two negative edges and one positive edge
+  \item Unbalanced triads: one negative edge and two positive edges or all negative edges
 \end{itemize}
