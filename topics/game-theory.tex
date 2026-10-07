@@ -1,0 +1,116 @@
+\chapter{Game Theory}
+
+\section{Strategic-Form Games}
+\begin{itemize}
+    \item Game: players, available strategies, and payoffs for each strategy profile
+    \item Strategy profile: one strategy chosen by each player
+    \item Payoff: value or outcome a player receives from a strategy profile
+    \item Best response: strategy that maximizes a player's payoff given the other players' strategies
+    \item Strict best response: strategy that gives a strictly higher payoff than every alternative, given the other players' strategies
+    \item More than one best response possible when strategies tie for the highest payoff
+\end{itemize}
+
+\section{Dominant Strategies}
+\begin{itemize}
+    \item Dominant strategy: best response to every possible strategy profile of the other players
+    \item Strictly dominant strategy: gives a strictly higher payoff than every alternative for every possible strategy profile of the other players
+    \item Strictly dominant strategy: rational choice regardless of what the other players do
+    \item A game may have no dominant strategy, or may have dominant strategies for some or all players
+\end{itemize}
+
+\section{Example Games}
+\subsection{Presentation vs. Exam}
+\begin{itemize}
+    \item Compare each player's available choices and payoffs in every outcome
+    \item Mark each player's best response to each choice of the other player
+    \item Use the payoff matrix to determine whether choices align or conflict
+\end{itemize}
+
+\subsection{Prisoner's Dilemma}
+\begin{itemize}
+    \item Two players independently choose to cooperate or defect
+    \item Defecting: strictly dominant strategy for each player
+    \item (Defect, Defect): Nash equilibrium, despite mutual cooperation giving both players a better outcome
+    \item Individual incentives can produce an outcome worse for both players than cooperation
+\end{itemize}
+
+\subsection{A New Product}
+\begin{itemize}
+    \item Analyze the available choices and payoffs for each player using the lecture payoff matrix
+    \item Check how one player's best response changes with the other player's choice
+    \item Use best responses to identify any Nash equilibria
+\end{itemize}
+
+\subsection{Three Clients}
+\begin{itemize}
+    \item Identify the players, available strategies, and payoffs from the lecture example
+    \item For each player, compare payoffs across their choices while holding the other players' choices fixed
+    \item Mark mutual best responses to locate Nash equilibria
+\end{itemize}
+
+\section{Nash Equilibrium}
+\begin{itemize}
+    \item Two-player strategy profile $(S,T)$: Nash equilibrium if $S$ is a best response to $T$ and $T$ is a best response to $S$
+    \item General case: every player's strategy is a best response to the strategies chosen by all other players
+    \item At equilibrium: no player can improve their payoff by changing strategy alone
+    \item Finite-game existence theorem: every game with finitely many players and finitely many strategies has at least one Nash equilibrium in mixed strategies
+    \item Pure-strategy Nash equilibrium: equilibrium using a single strategy per player; not guaranteed to exist
+\end{itemize}
+
+\section{Focal Points}
+\begin{itemize}
+    \item Focal point: salient outcome that helps players coordinate without communication
+    \item Salience may come from conventions, shared expectations, or a distinctive feature of the game
+    \item Focal points can help players select among multiple coordination-game equilibria
+\end{itemize}
+
+\section{Mixed Strategies}
+\begin{itemize}
+    \item Mixed strategy: probability distribution over a player's available pure strategies
+    \item Pure strategy: one action chosen with probability $1$
+    \item Expected payoff: probability-weighted average payoff across possible outcomes
+    \item For strategy profile $(s_i,s_{-i})$ drawn from mixed strategies:
+          \[
+              \mathbb{E}[u_i] = \sum_{s_i,s_{-i}} \Pr(s_i)\Pr(s_{-i})u_i(s_i,s_{-i})
+          \]
+    \item Mixed-strategy Nash equilibrium: each player's probability distribution is a best response to the others' distributions
+    \item In equilibrium, every pure strategy used with positive probability gives the player the same expected payoff
+\end{itemize}
+
+\subsection{Finding a Mixed-Strategy Equilibrium}
+\begin{itemize}
+    \item Assign probabilities to one player's strategies
+    \item Choose probabilities that make the other player indifferent among their pure strategies
+    \item Repeat in the opposite direction to find the first player's equilibrium probabilities
+    \item Indifference makes mixing optimal; a player would otherwise put all probability on a higher-payoff pure strategy
+\end{itemize}
+
+\section{Matching Pennies}
+\begin{itemize}
+    \item Each player chooses Heads or Tails
+    \item Player 1 wins when choices match; Player 2 wins when choices differ
+    \item No pure-strategy Nash equilibrium: either player can switch and improve their payoff
+    \item Let $q$ be the probability Player 2 chooses Heads
+    \item Player 1's expected payoff from Heads: $q - (1-q) = 2q-1$
+    \item Player 1's expected payoff from Tails: $(1-q)-q = 1-2q$
+    \item Player 1 is indifferent when $2q-1=1-2q$, so $q=\frac{1}{2}$
+    \item By symmetry, Player 1 also chooses Heads with probability $\frac{1}{2}$
+    \item Mixed-strategy Nash equilibrium: each player chooses Heads and Tails with probability $\frac{1}{2}$
+\end{itemize}
+
+\section{Coordination Game}
+\begin{itemize}
+    \item Players benefit from choosing strategies that match or coordinate
+    \item Coordination games often have multiple Nash equilibria
+    \item Equilibrium selection: players need expectations, conventions, or focal points to coordinate on one equilibrium
+    \item A coordinated outcome may be better for everyone than a mismatched outcome
+\end{itemize}
+
+\section{Network Traffic}
+
+\begin{itemize}
+    \item Players choose routes in a network to minimize their own travel time
+    \item Travel time on a route depends on the number of players using it
+    \item Nash equilibrium occurs when no player can reduce their travel time by unilaterally changing routes
+    \item Equilibria may be inefficient compared to a centrally coordinated solution (Braess's paradox)
+\end{itemize}
