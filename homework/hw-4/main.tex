@@ -1,0 +1,320 @@
+\documentclass{assignment}
+
+\class{SI 315}
+\title{Assignment 4}
+\author{Silas Falde}
+
+\begin{document}
+\maketitle
+\tableofcontents
+
+\section{Nash Equilibria}
+
+\subsection{Matrix A}
+
+\begin{problem}
+    Find all pure strategy Nash equilibria in the game below. In the payoff matrix below the rows correspond to player A's strategies and the columns correspond to player B's. The first entry in each box is player A's payoff and the second entry is player B's payoff.
+
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{lcc}
+                          & \text{B Left} & \text{B Right} \\
+            \hline
+            \text{A Up}   & (1, 2)        & (3, 2)         \\
+            \text{A Down} & (2, 4)        & (0, 2)         \\
+        \end{tabular}
+
+    \end{table}
+\end{problem}
+\begin{solution}
+    Player A's best response to B's Left is Down, while A's best response to
+    B's Right is Up. Player B's best response to A's Up is either Left or Right
+    (the payoffs tie), and B's best response to A's Down is Left. So the pure-strategy Nash equilibria are
+    \((\text{Down},\text{Left})\) and \((\text{Up},\text{Right})\).
+\end{solution}
+
+\subsection{Matrix B}
+
+\begin{problem}
+    Consider the two-player game with players, strategies and payoffs described in the following game matrix.
+    \begin{enumerate}
+        \item Does either player have a dominant strategy? Explain briefly (1-3 sentences).
+        \item Find all pure strategy Nash equilibria for this game.
+    \end{enumerate}
+
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{lccc}
+                            & \text{B Left} & \text{B Middle} & \text{B Right} \\
+            \hline
+            \text{A Top}    & (0, 3)        & (6, 2)          & (1, 1)         \\
+            \text{A Middle} & (2, 3)        & (0, 1)          & (7, 0)         \\
+            \text{A Bottom} & (5, 3)        & (4, 2)          & (3, 1)         \\
+        \end{tabular}
+    \end{table}
+\end{problem}
+\begin{solution}
+    Player A's has a dominant strategy of Bottom, since it gives A a higher payoff than either alternative for every strategy of B. Player B has no dominant strategy. The unique pure-strategy Nash equilibrium is \((\text{Bottom},\text{Left})\).
+\end{solution}
+
+\subsection{Matrix C}
+
+\begin{problem}
+    Consider the following two-player game in which each player has three strategies. Find all the pure strategy Nash equilibria for this game.
+
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{lccc}
+                            & \text{B Left} & \text{B Middle} & \text{B Right} \\
+            \hline
+            \text{A Up}     & (1, 1)        & (2, 3)          & (1, 6)         \\
+            \text{A Middle} & (3, 4)        & (5, 5)          & (2, 2)         \\
+            \text{A Down}   & (1, 10)       & (4, 7)          & (0, 4)         \\
+        \end{tabular}
+    \end{table}
+\end{problem}
+\begin{solution}
+    A's best response to each of B's strategies is Middle. B's best responses to A's strategies Up is Right, Middle is Middle, and Down is Left, respectively. So the unique pure-strategy Nash equilibrium is \((\text{Middle},\text{Middle})\).
+\end{solution}
+
+\section{Hot-dog Vendors}
+
+\begin{problem}
+    Consider a football stadium with three seating sections, \(S_1\), \(S_2\), and
+    \(S_3\), arranged in a row. The distance between \(S_1\) and \(S_2\) is the same
+    as the distance between \(S_2\) and \(S_3\). Each section seats 100 people.
+
+    Two hotdog vendors must choose a section in which to set up shop. Fans do not
+    want to miss any part of the game, so each fan buys a hotdog from the vendor in
+    the closest section; assume the fan's location within a section does not affect
+    distance. Every seat is occupied, and every fan buys one hotdog. If a fan is
+    equally far from both vendors, that fan is split evenly between them. For
+    example, if the vendors choose \(S_1\) and \(S_3\), half the fans in \(S_2\)
+    buy from each vendor. If both vendors choose the same section, half of all fans
+    buy from each vendor.
+
+    \begin{enumerate}
+        \item Construct a payoff matrix showing how many hotdogs each vendor sells
+              for every pair of section choices. Underline all best responses.
+        \item Does either vendor have a dominant strategy? If so, is it strictly
+              dominant? Explain.
+        \item Find all pure-strategy Nash equilibria of this game. Explain.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    The payoffs are the numbers of hotdogs sold, with Vendor A's payoff listed
+    first.
+
+    \begin{center}
+        \begin{tabular}{lccc}
+                                      & \text{Vendor B: } \(S_1\) & \text{Vendor B: } \(S_2\)          & \text{Vendor B: } \(S_3\) \\
+            \hline
+            \text{Vendor A: } \(S_1\) & (150, 150)                & (100, \underline{200})             & (150, 150)                \\
+            \text{Vendor A: } \(S_2\) & (\underline{200}, 100)    & (\underline{150}, \underline{150}) & (\underline{200}, 100)    \\
+            \text{Vendor A: } \(S_3\) & (150, 150)                & (100, \underline{200})             & (150, 150)                \\
+        \end{tabular}
+    \end{center}
+
+    Each vendor's dominant strategy is to set up in \(S_2\). If the
+    other vendor chooses an end section, choosing \(S_2\) attracts 200 fans;
+    if the other vendor chooses \(S_2\), choosing \(S_2\) sells 150 hotdogs
+    rather than 100. So the unique pure-strategy Nash equilibrium is
+    \((S_2,S_2)\), where each vendor sells 150 hotdogs.
+\end{solution}
+
+\section{Constructing Games}
+
+\begin{problem}
+    For each of the following, either (i) give an example of the payoff matrix of a
+    game with two players and three strategies per player that satisfies the
+    requirement, or (ii) explain why the requirement is impossible to satisfy.
+    Make all payoffs integers between 0 and 9, and underline the best responses in
+    the payoff matrix. Do not choose examples of games covered in class, discussion,
+    or in the textbook.
+
+    \begin{enumerate}
+        \item[(a)] One player receives the same payoff regardless of the strategies
+              chosen, and neither player has a dominant strategy.
+        \item[(b)] There are exactly three pure-strategy Nash equilibria.
+        \item[(c)] One player has a strictly dominant strategy, and there are no
+              pure-strategy Nash equilibria.
+        \item[(d)] One player has a dominant strategy, and there are exactly two
+              pure-strategy Nash equilibria.
+        \item[(e)] One player has a strictly dominant strategy, the second player
+              has a dominant strategy, and there are four pure-strategy Nash equilibria.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{enumerate}
+        \item[(a)] Impossible. The player whose payoff is constant is indifferent
+              to all of their strategies, so each strategy is a (weakly) dominant
+              strategy for that player, which contradicts the requirement that neither
+              player have a dominant strategy.
+        \item[(b)] This is satisfied by a game with diagonal best outcomes:
+
+              \begin{center}
+                  \begin{tabular}{lccc}
+                                 & \text{B 1}                     & \text{B 2}                     & \text{B 3}                     \\
+                      \hline
+                      \text{A 1} & (\underline{9}, \underline{8}) & (0, 1)                         & (1, 2)                         \\
+                      \text{A 2} & (0, 0)                         & (\underline{8}, \underline{9}) & (2, 3)                         \\
+                      \text{A 3} & (1, 1)                         & (3, 4)                         & (\underline{7}, \underline{7}) \\
+                  \end{tabular}
+              \end{center}
+              So the pure-strategy Nash equilibria are
+              \((\text{A 1},\text{B 1})\), \((\text{A 2},\text{B 2})\), and
+              \((\text{A 3},\text{B 3})\).
+        \item[(c)] Impossible. A player with a strictly
+              dominant strategy will choose it, and the other player will have at least one
+              best response to that choice, which is a
+              pure-strategy Nash equilibrium.
+        \item[(d)] For example:
+
+              \begin{center}
+                  \begin{tabular}{lccc}
+                                 & \text{B 1}                     & \text{B 2}                     & \text{B 3}         \\
+                      \hline
+                      \text{A 1} & (\underline{8}, \underline{7}) & (\underline{8}, \underline{7}) & (\underline{8}, 2) \\
+                      \text{A 2} & (4, \underline{9})             & (5, 1)                         & (6, 8)             \\
+                      \text{A 3} & (1, 1)                         & (2, \underline{8})             & (3, 6)             \\
+                  \end{tabular}
+              \end{center}
+              A 1 is strictly dominant for A. Against A 1, B's best responses are B 1
+              and B 2, so the two pure-strategy Nash equilibria are
+              \((\text{A 1},\text{B 1})\) and \((\text{A 1},\text{B 2})\).
+        \item[(e)] Impossible. A strictly dominant strategy limits one player's
+              strategy to a single choice (row) in every pure-strategy Nash equilibrium. Since there are only three possible choices for the other player, there can be at most three distinct pure-strategy Nash equilibria, not four.
+    \end{enumerate}
+\end{solution}
+
+\section{Nash Equilibrium Statements}
+
+\begin{problem}
+    Consider each of the following statements. Is the statement correct or
+    incorrect? If you think it is correct, give a brief (1--3 sentence) explanation.
+    If you think it is incorrect, give a counterexample of a game, together with a
+    brief (1--3 sentence) explanation.
+
+    \begin{enumerate}
+        \item[(a)] If a pair of strategies gives both players higher payoffs than a
+              pure-strategy Nash equilibrium, then it cannot be a Nash equilibrium.
+        \item[(b)] If a two-player game has a pure-strategy Nash equilibrium, then at
+              least one player must be playing a dominant strategy in that equilibrium.
+        \item[(c)] If \((s_A, s_B)\) is a pure-strategy Nash equilibrium and \(s_A\)
+              is Player A's unique best response to \(s_B\), then any other
+              pure-strategy Nash equilibrium must have Player B choose a strategy other
+              than \(s_B\).
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{enumerate}
+        \item[(a)] Incorrect. Consider the game
+              \[
+                  \begin{array}{c|cc}
+                                    & \text{B Left} & \text{B Right} \\ \hline
+                      \text{A Up}   & (1,1)         & (0,0)          \\
+                      \text{A Down} & (0,0)         & (3,3)
+                  \end{array}
+              \]
+              Both \((\text{Up},\text{Left})\) and \((\text{Down},\text{Right})\)
+              are Nash equilibria. The latter gives both players a higher payoff than
+              the former, so a payoff-superior outcome can itself be a Nash equilibrium. Another example is the prisoners' dilemma, where the outcome (Cooperate, Cooperate) gives both players a higher payoff than the Nash equilibrium (Defect, Defect).
+        \item[(b)] Incorrect. In the following game, all three diagonal outcomes
+              are Nash equilibria, but neither player has a dominant strategy:
+              \[
+                  \begin{array}{c|ccc}
+                                 & \text{B 1} & \text{B 2} & \text{B 3} \\ \hline
+                      \text{A 1} & (4,3)      & (0,1)      & (1,0)      \\
+                      \text{A 2} & (0,1)      & (5,4)      & (1,0)      \\
+                      \text{A 3} & (1,0)      & (0,1)      & (6,5)
+                  \end{array}
+              \]
+              Each player's best strategy changes with the other player's choice, so
+              no strategy is dominant for either player.
+        \item[(c)] Correct. If B chose \(s_B\) in another equilibrium, A's
+              unique best response would still be \(s_A\), making the outcome the
+              original \((s_A,s_B)\). So any distinct equilibrium must have B
+              choose a strategy other than \(s_B\).
+    \end{enumerate}
+\end{solution}
+
+\section{Parameterized Payoff Matrix}
+
+\begin{problem}
+    Consider the following game. The first payoff in each cell is Player 1's payoff,
+    and the second is Player 2's payoff.
+
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{lccc}
+                               & \text{Player 2: L} & \text{Player 2: C} & \text{Player 2: R} \\
+            \hline
+            \text{Player 1: U} & (6, 8)             & (2, 2)             & (1, \(x+y\))       \\
+            \text{Player 1: M} & (3, 4)             & (\(x\), \(y\))     & (4, 3)             \\
+            \text{Player 1: D} & (2, 1)             & (3, 4)             & (7, \(y-x+2\))     \\
+        \end{tabular}
+    \end{table}
+
+    \begin{enumerate}
+        \item[(a)] Suppose x = 4 and y = 5. Find all pure-strategy Nash equilibria.
+        \item[(b)] Now allow x and y to vary. Find the range of x and the range of y for which (M,C) is a pure-strategy Nash equilibrium.
+        \item[(c)] Suppose Player 2 is exactly indifferent between L and R when Player 1 chooses U, and is exactly indifferent between C and R when Player 1 chooses D. Find x and y. At these values of x and y, find all pure-strategy Nash equilibria.
+    \end{enumerate}
+\end{problem}
+\begin{solution}
+    \begin{enumerate}
+        \item[(a)] Substitute \(x=4\) and \(y=5\):
+              \[
+                  \begin{array}{c|ccc}
+                        & L     & C     & R     \\ \hline
+                      U & (6,8) & (2,2) & (1,9) \\
+                      M & (3,4) & (4,5) & (4,3) \\
+                      D & (2,1) & (3,4) & (7,3)
+                  \end{array}
+              \]
+              Player 1's best responses to L, C, and R are U, M, and D,
+              respectively. Player 2's best responses to U, M, and D are R, C,
+              and C, respectively. The only mutual best response is \((M,C)\),
+              so it is the unique pure-strategy Nash equilibrium.
+
+        \item[(b)] Against C, Player 1's payoffs from U, M, and D are \(2\),
+              \(x\), and \(3\), so M is a best response exactly when \(x\geq 3\).
+              Against M, Player 2's payoffs from L, C, and R are \(4\), \(y\),
+              and \(3\), so C is a best response exactly when \(y\geq 4\).
+              So \((M,C)\) is a pure-strategy Nash equilibrium exactly for
+              \(x\geq 3\) and \(y\geq 4\).
+
+        \item[(c)] Player 2's payoffs from L and R against U are \(8\) and
+              \(x+y\), so indifference requires \(x+y=8\). Against D, Player 2's
+              payoffs from C and R are \(4\) and \(y-x+2\), so indifference
+              requires \(y-x=2\). Solving the system
+              \[
+                  \begin{cases}
+                      x+y=8, \\
+                      y-x=2
+                  \end{cases}
+              \]
+              gives \(y=x+2\), so substituting into \(x+y=8\) yields
+              \(x+(x+2)=8 \implies 2x=6 \implies x=3\). Then
+              \(y=x+2=5\).
+
+              Solved matrix:
+              \[
+                  \begin{array}{c|ccc}
+                        & L     & C     & R     \\ \hline
+                      U & (6,8) & (2,2) & (1,8) \\
+                      M & (3,4) & (3,5) & (4,3) \\
+                      D & (2,1) & (3,4) & (7,4)
+                  \end{array}
+              \]
+
+              At these values, Player 1's best responses to L, C, and R are U;
+              M and D; and D, respectively. Player 2's best responses to U, M,
+              and D are L and R; C; and C and R, respectively. The pure-strategy
+              Nash equilibria are therefore \((U,L)\), \((M,C)\), \((D,C)\), and
+              \((D,R)\).
+    \end{enumerate}
+\end{solution}
+
+
+\end{document}
