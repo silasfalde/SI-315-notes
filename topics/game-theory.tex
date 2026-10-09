@@ -85,6 +85,76 @@
     \item Indifference makes mixing optimal; a player would otherwise put all probability on a higher-payoff pure strategy
 \end{itemize}
 
+\subsection{Solving for an Unknown Payoff}
+\begin{itemize}
+    \item \textbf{Indifference principle}: in a mixed-strategy NE, each player's mix makes the \emph{other} player indifferent among strategies played with positive probability
+    \item Steps:
+          \begin{enumerate}
+              \item Get equilibrium probabilities (usually given)
+              \item Write indifference condition for the player whose payoffs are known: uses the opponent's mix
+              \item Write indifference condition for the player with the unknown payoff $x$: $\mathbb{E}[u_1(U)] = \mathbb{E}[u_1(D)]$
+              \item Solve for $x$: linear, one equation, one unknown
+          \end{enumerate}
+    \item Unknown payoff of player $i$ appears in $i$'s indifference condition, which uses the \emph{opponent's} probabilities
+    \item If $x$ also affects the opponent's mix: use both indifference equations with given probabilities
+    \item If no probabilities given: treat $p,q$ as unknowns; two indifference equations, solve for $p,q,x$
+    \item Check: all probabilities in $[0,1]$; no profitable deviation to a pure strategy outside the mix
+\end{itemize}
+
+\paragraph{Example}
+\begin{itemize}
+    \item Payoffs (Player 1, Player 2):
+          \begin{center}
+              \begin{tabular}{c|c|c}
+                      & $L$   & $R$   \\ \hline
+                  $U$ & $x,2$ & $0,1$ \\ \hline
+                  $D$ & $1,0$ & $3,3$ \\
+              \end{tabular}
+          \end{center}
+    \item Given: Player 2 plays $L$ with probability $q=\frac{3}{4}$
+    \item Player 1 indifferent between $U$ and $D$:
+          \begin{align*}
+              \mathbb{E}[u_1(U)] & = qx + (1-q)\cdot 0 = \tfrac{3}{4}x                                  \\
+              \mathbb{E}[u_1(D)] & = q\cdot 1 + (1-q)\cdot 3 = \tfrac{3}{4}+\tfrac{3}{4} = \tfrac{3}{2}
+          \end{align*}
+    \item Set equal: $\frac{3}{4}x = \frac{3}{2}$, so $\boxed{x=2}$
+\end{itemize}
+
+\subsection{Probabilities from a Complete Payoff Matrix}
+\begin{itemize}
+    \item $p$ = $\Pr(\text{Player 1 plays } U)$; $q$ = $\Pr(\text{Player 2 plays } L)$
+    \item $p$ comes from \textbf{Player 2's} indifference; $q$ comes from \textbf{Player 1's} indifference
+    \item Own payoffs only determine what the opponent does; given $q$ is not needed to find $p$
+    \item Check dominated strategies first: strictly dominated gets probability $0$; fully mixed NE needs no dominant strategy
+    \item Valid only if $0<p,q<1$
+\end{itemize}
+
+\paragraph{Example}
+\begin{itemize}
+    \item Payoffs (Player 1, Player 2):
+          \begin{center}
+              \begin{tabular}{c|c|c}
+                      & $L$   & $R$   \\ \hline
+                  $U$ & $4,3$ & $1,1$ \\ \hline
+                  $D$ & $2,0$ & $5,4$ \\
+              \end{tabular}
+          \end{center}
+    \item Find $p$: Player 2 indifferent between $L$ and $R$
+          \begin{align*}
+              \mathbb{E}[u_2(L)] & = 3p + 0(1-p) = 3p   \\
+              \mathbb{E}[u_2(R)] & = 1p + 4(1-p) = 4-3p
+          \end{align*}
+    \item $3p = 4-3p$, so $\boxed{p=\frac{2}{3}}$
+    \item Find $q$: Player 1 indifferent between $U$ and $D$
+          \begin{align*}
+              \mathbb{E}[u_1(U)] & = 4q + 1(1-q) = 1+3q \\
+              \mathbb{E}[u_1(D)] & = 2q + 5(1-q) = 5-3q
+          \end{align*}
+    \item $1+3q = 5-3q$, so $\boxed{q=\frac{2}{3}}$
+    \item Mixed NE: $p=q=\frac{2}{3}$
+    \item Sanity check: $q=\frac{1}{2}$ is not an equilibrium value; $\mathbb{E}[u_1(U)]=2.5 < 3.5=\mathbb{E}[u_1(D)]$, so Player 1 strictly prefers $D$
+\end{itemize}
+
 \section{Matching Pennies}
 \begin{itemize}
     \item Each player chooses Heads or Tails
